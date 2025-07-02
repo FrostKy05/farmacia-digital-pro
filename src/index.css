@@ -19,13 +19,13 @@
     --primary: 14 165 233;
     --primary-foreground: 248 250 252;
 
-    --secondary: 16 185 129;
+    --secondary: 248 250 252;
     --secondary-foreground: 15 23 42;
 
     --muted: 241 245 249;
     --muted-foreground: 100 116 139;
 
-    --accent: 34 197 94;
+    --accent: 229 231 235;
     --accent-foreground: 15 23 42;
 
     --destructive: 239 68 68;
@@ -60,13 +60,13 @@
     --primary: 56 189 248;
     --primary-foreground: 15 23 42;
 
-    --secondary: 52 211 153;
+    --secondary: 241 245 249;
     --secondary-foreground: 15 23 42;
 
     --muted: 51 65 85;
     --muted-foreground: 148 163 184;
 
-    --accent: 34 197 94;
+    --accent: 156 163 175;
     --accent-foreground: 248 250 252;
 
     --destructive: 239 68 68;
@@ -117,11 +117,11 @@
   animation: slideIn 0.3s ease-out;
 }
 
-/* Gradientes farmacéuticos */
+/* Gradientes farmacéuticos futuristas */
 .bg-pharmacy-gradient {
-  background: linear-gradient(135deg, rgb(14 165 233) 0%, rgb(16 185 129) 100%);
+  background: linear-gradient(135deg, rgb(14 165 233) 0%, rgb(248 250 252) 100%);
 }
 
 .bg-pharmacy-light {
-  background: linear-gradient(135deg, rgb(219 234 254) 0%, rgb(209 250 229) 100%);
+  background: linear-gradient(135deg, rgb(219 234 254) 0%, rgb(255 255 255) 100%);
 }
