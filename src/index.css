@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 245 250 252;
+    --background: 250 245 255;
     --foreground: 15 23 42;
 
     --card: 255 255 255;
@@ -16,13 +16,13 @@
     --popover: 255 255 255;
     --popover-foreground: 15 23 42;
 
-    --primary: 14 165 233;
+    --primary: 147 51 234;
     --primary-foreground: 248 250 252;
 
     --secondary: 248 250 252;
     --secondary-foreground: 15 23 42;
 
-    --muted: 241 245 249;
+    --muted: 245 243 255;
     --muted-foreground: 100 116 139;
 
     --accent: 229 231 235;
@@ -33,18 +33,18 @@
 
     --border: 226 232 240;
     --input: 226 232 240;
-    --ring: 14 165 233;
+    --ring: 147 51 234;
 
     --radius: 0.75rem;
 
     --sidebar-background: 248 250 252;
     --sidebar-foreground: 51 65 85;
-    --sidebar-primary: 14 165 233;
+    --sidebar-primary: 147 51 234;
     --sidebar-primary-foreground: 248 250 252;
-    --sidebar-accent: 241 245 249;
+    --sidebar-accent: 245 243 255;
     --sidebar-accent-foreground: 51 65 85;
     --sidebar-border: 226 232 240;
-    --sidebar-ring: 14 165 233;
+    --sidebar-ring: 147 51 234;
   }
 
   .dark {
@@ -57,7 +57,7 @@
     --popover: 30 41 59;
     --popover-foreground: 248 250 252;
 
-    --primary: 56 189 248;
+    --primary: 168 85 247;
     --primary-foreground: 15 23 42;
 
     --secondary: 241 245 249;
@@ -74,16 +74,16 @@
 
     --border: 51 65 85;
     --input: 51 65 85;
-    --ring: 56 189 248;
+    --ring: 168 85 247;
 
     --sidebar-background: 30 41 59;
     --sidebar-foreground: 203 213 225;
-    --sidebar-primary: 56 189 248;
+    --sidebar-primary: 168 85 247;
     --sidebar-primary-foreground: 15 23 42;
     --sidebar-accent: 51 65 85;
     --sidebar-accent-foreground: 203 213 225;
     --sidebar-border: 51 65 85;
-    --sidebar-ring: 56 189 248;
+    --sidebar-ring: 168 85 247;
   }
 }
 
@@ -117,11 +117,11 @@
   animation: slideIn 0.3s ease-out;
 }
 
-/* Gradientes farmacéuticos futuristas */
+/* Gradientes farmacéuticos */
 .bg-pharmacy-gradient {
-  background: linear-gradient(135deg, rgb(14 165 233) 0%, rgb(248 250 252) 100%);
+  background: linear-gradient(135deg, rgb(147 51 234) 0%, rgb(168 85 247) 100%);
 }
 
 .bg-pharmacy-light {
-  background: linear-gradient(135deg, rgb(219 234 254) 0%, rgb(255 255 255) 100%);
+  background: linear-gradient(135deg, rgb(243 232 255) 0%, rgb(250 245 255) 100%);
 }

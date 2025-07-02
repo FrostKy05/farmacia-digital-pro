@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Shield, Users } from 'lucide-react';
+import { Loader2, Shield, Users, Pill } from 'lucide-react';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -47,16 +47,16 @@ const Login = () => {
     <div className="min-h-screen bg-pharmacy-light flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6 animate-fadeIn">
         <div className="text-center">
-          <div className="mx-auto w-16 h-16 bg-pharmacy-gradient rounded-full flex items-center justify-center mb-4">
-            <Shield className="w-8 h-8 text-white" />
+          <div className="mx-auto w-16 h-16 bg-pharmacy-gradient rounded-full flex items-center justify-center mb-4 shadow-lg">
+            <Pill className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900">Farmacia Digital Pro</h1>
-          <p className="text-gray-600 mt-2">Sistema de gestión farmacéutica</p>
+          <p className="text-purple-600 mt-2 font-medium">Sistema de gestión farmacéutica</p>
         </div>
 
-        <Card className="shadow-lg border-0">
-          <CardHeader>
-            <CardTitle>Iniciar Sesión</CardTitle>
+        <Card className="shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+          <CardHeader className="text-center">
+            <CardTitle className="text-purple-800">Iniciar Sesión</CardTitle>
             <CardDescription>
               Ingresa tus credenciales para acceder al sistema
             </CardDescription>
@@ -64,32 +64,34 @@ const Login = () => {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Correo Electrónico</Label>
+                <Label htmlFor="email" className="text-purple-700">Correo Electrónico</Label>
                 <Input
                   id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="usuario@farmacia.com"
+                  className="border-purple-200 focus:border-purple-400"
                   required
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="password">Contraseña</Label>
+                <Label htmlFor="password" className="text-purple-700">Contraseña</Label>
                 <Input
                   id="password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
+                  className="border-purple-200 focus:border-purple-400"
                   required
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-pharmacy-gradient hover:opacity-90 transition-opacity"
+                className="w-full bg-pharmacy-gradient hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -104,7 +106,7 @@ const Login = () => {
             </form>
 
             <div className="mt-6 space-y-3">
-              <div className="text-sm text-gray-600 text-center">
+              <div className="text-sm text-purple-600 text-center font-medium">
                 Credenciales de prueba:
               </div>
               
@@ -113,7 +115,7 @@ const Login = () => {
                   variant="outline"
                   size="sm"
                   onClick={() => fillDemoCredentials('admin')}
-                  className="text-xs"
+                  className="text-xs border-purple-200 text-purple-700 hover:bg-purple-50"
                 >
                   <Shield className="w-3 h-3 mr-1" />
                   Admin
@@ -122,7 +124,7 @@ const Login = () => {
                   variant="outline"
                   size="sm"
                   onClick={() => fillDemoCredentials('employee')}
-                  className="text-xs"
+                  className="text-xs border-purple-200 text-purple-700 hover:bg-purple-50"
                 >
                   <Users className="w-3 h-3 mr-1" />
                   Empleado
