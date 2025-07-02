@@ -53,10 +53,12 @@ const menuItems = [
 ];
 
 export function AppSidebar() {
-  const { collapsed } = useSidebar();
+  const { state } = useSidebar();
   const { user, logout } = useAuth();
   const { pharmacyName } = usePharmacy();
   const location = useLocation();
+  
+  const isCollapsed = state === 'collapsed';
   
   const isActive = (path: string) => {
     if (path === '/') {
@@ -76,10 +78,10 @@ export function AppSidebar() {
   );
 
   return (
-    <Sidebar className={collapsed ? "w-16" : "w-64"} collapsible>
+    <Sidebar className={isCollapsed ? "w-16" : "w-64"} collapsible="icon">
       <SidebarHeader className="border-b">
         <div className="p-4">
-          {!collapsed ? (
+          {!isCollapsed ? (
             <div>
               <div className="flex items-center space-x-2 mb-2">
                 <div className="w-8 h-8 bg-pharmacy-gradient rounded-lg flex items-center justify-center">
@@ -110,7 +112,7 @@ export function AppSidebar() {
                       className={getNavClass(item.url)}
                     >
                       <item.icon className="w-4 h-4" />
-                      {!collapsed && <span>{item.title}</span>}
+                      {!isCollapsed && <span>{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -122,7 +124,7 @@ export function AppSidebar() {
 
       <SidebarFooter className="border-t">
         <div className="p-4 space-y-4">
-          {!collapsed && (
+          {!isCollapsed && (
             <div className="flex items-center space-x-3 p-2 bg-muted rounded-lg">
               <div className={`p-2 rounded-full ${user?.role === 'admin' ? 'bg-purple-100' : 'bg-blue-100'}`}>
                 {user?.role === 'admin' ? (
@@ -144,7 +146,7 @@ export function AppSidebar() {
             className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50"
           >
             <LogOut className="w-4 h-4" />
-            {!collapsed && <span className="ml-2">Cerrar Sesión</span>}
+            {!isCollapsed && <span className="ml-2">Cerrar Sesión</span>}
           </Button>
         </div>
       </SidebarFooter>
